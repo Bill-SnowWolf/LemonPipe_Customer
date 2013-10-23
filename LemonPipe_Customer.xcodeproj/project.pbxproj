@@ -1,0 +1,305 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B2158B921818534900752368 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2158B911818534900752368 /* UIKit.framework */; };
+		B2158B941818534900752368 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2158B931818534900752368 /* Foundation.framework */; };
+		B2158B961818534900752368 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2158B951818534900752368 /* CoreGraphics.framework */; };
+		B2158B9C1818534A00752368 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2158B9A1818534A00752368 /* InfoPlist.strings */; };
+		B2158B9E1818534A00752368 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2158B9D1818534A00752368 /* main.m */; };
+		B2158BA21818534A00752368 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2158BA11818534A00752368 /* AppDelegate.m */; };
+		B2158BA41818534B00752368 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B2158BA31818534B00752368 /* Default.png */; };
+		B2158BA61818534B00752368 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2158BA51818534B00752368 /* Default@2x.png */; };
+		B2158BA81818534B00752368 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2158BA71818534B00752368 /* Default-568h@2x.png */; };
+		B2158BAB1818534B00752368 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2158BA91818534B00752368 /* MainStoryboard.storyboard */; };
+		B2158BAE1818534B00752368 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2158BAD1818534B00752368 /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B2158B8E1818534900752368 /* LemonPipe_Customer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonPipe_Customer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2158B911818534900752368 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B2158B931818534900752368 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B2158B951818534900752368 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B2158B991818534A00752368 /* LemonPipe_Customer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LemonPipe_Customer-Info.plist"; sourceTree = "<group>"; };
+		B2158B9B1818534A00752368 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B2158B9D1818534A00752368 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B2158B9F1818534A00752368 /* LemonPipe_Customer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LemonPipe_Customer-Prefix.pch"; sourceTree = "<group>"; };
+		B2158BA01818534A00752368 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B2158BA11818534A00752368 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B2158BA31818534B00752368 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B2158BA51818534B00752368 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B2158BA71818534B00752368 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B2158BAA1818534B00752368 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		B2158BAC1818534B00752368 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B2158BAD1818534B00752368 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B2158B8B1818534900752368 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2158B921818534900752368 /* UIKit.framework in Frameworks */,
+				B2158B941818534900752368 /* Foundation.framework in Frameworks */,
+				B2158B961818534900752368 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B2158B851818534800752368 = {
+			isa = PBXGroup;
+			children = (
+				B2158B971818534900752368 /* LemonPipe_Customer */,
+				B2158B901818534900752368 /* Frameworks */,
+				B2158B8F1818534900752368 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B2158B8F1818534900752368 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2158B8E1818534900752368 /* LemonPipe_Customer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2158B901818534900752368 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2158B911818534900752368 /* UIKit.framework */,
+				B2158B931818534900752368 /* Foundation.framework */,
+				B2158B951818534900752368 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2158B971818534900752368 /* LemonPipe_Customer */ = {
+			isa = PBXGroup;
+			children = (
+				B2158BA01818534A00752368 /* AppDelegate.h */,
+				B2158BA11818534A00752368 /* AppDelegate.m */,
+				B2158BA91818534B00752368 /* MainStoryboard.storyboard */,
+				B2158BAC1818534B00752368 /* ViewController.h */,
+				B2158BAD1818534B00752368 /* ViewController.m */,
+				B2158B981818534A00752368 /* Supporting Files */,
+			);
+			path = LemonPipe_Customer;
+			sourceTree = "<group>";
+		};
+		B2158B981818534A00752368 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B2158B991818534A00752368 /* LemonPipe_Customer-Info.plist */,
+				B2158B9A1818534A00752368 /* InfoPlist.strings */,
+				B2158B9D1818534A00752368 /* main.m */,
+				B2158B9F1818534A00752368 /* LemonPipe_Customer-Prefix.pch */,
+				B2158BA31818534B00752368 /* Default.png */,
+				B2158BA51818534B00752368 /* Default@2x.png */,
+				B2158BA71818534B00752368 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B2158B8D1818534900752368 /* LemonPipe_Customer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2158BB11818534B00752368 /* Build configuration list for PBXNativeTarget "LemonPipe_Customer" */;
+			buildPhases = (
+				B2158B8A1818534900752368 /* Sources */,
+				B2158B8B1818534900752368 /* Frameworks */,
+				B2158B8C1818534900752368 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LemonPipe_Customer;
+			productName = LemonPipe_Customer;
+			productReference = B2158B8E1818534900752368 /* LemonPipe_Customer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2158B861818534900752368 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Bill;
+			};
+			buildConfigurationList = B2158B891818534900752368 /* Build configuration list for PBXProject "LemonPipe_Customer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B2158B851818534800752368;
+			productRefGroup = B2158B8F1818534900752368 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B2158B8D1818534900752368 /* LemonPipe_Customer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B2158B8C1818534900752368 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2158B9C1818534A00752368 /* InfoPlist.strings in Resources */,
+				B2158BA41818534B00752368 /* Default.png in Resources */,
+				B2158BA61818534B00752368 /* Default@2x.png in Resources */,
+				B2158BA81818534B00752368 /* Default-568h@2x.png in Resources */,
+				B2158BAB1818534B00752368 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B2158B8A1818534900752368 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2158B9E1818534A00752368 /* main.m in Sources */,
+				B2158BA21818534A00752368 /* AppDelegate.m in Sources */,
+				B2158BAE1818534B00752368 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B2158B9A1818534A00752368 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2158B9B1818534A00752368 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B2158BA91818534B00752368 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2158BAA1818534B00752368 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B2158BAF1818534B00752368 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B2158BB01818534B00752368 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B2158BB21818534B00752368 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LemonPipe_Customer/LemonPipe_Customer-Prefix.pch";
+				INFOPLIST_FILE = "LemonPipe_Customer/LemonPipe_Customer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B2158BB31818534B00752368 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LemonPipe_Customer/LemonPipe_Customer-Prefix.pch";
+				INFOPLIST_FILE = "LemonPipe_Customer/LemonPipe_Customer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2158B891818534900752368 /* Build configuration list for PBXProject "LemonPipe_Customer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2158BAF1818534B00752368 /* Debug */,
+				B2158BB01818534B00752368 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2158BB11818534B00752368 /* Build configuration list for PBXNativeTarget "LemonPipe_Customer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2158BB21818534B00752368 /* Debug */,
+				B2158BB31818534B00752368 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2158B861818534900752368 /* Project object */;
+}
