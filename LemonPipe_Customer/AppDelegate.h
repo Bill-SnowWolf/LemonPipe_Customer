@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class Product;
+@protocol RefreshPromotionsDelegate <NSObject>
+
+- (void)getNewProduc: (NSUInteger)productID;
+- (void)getAllPromotions;
+
+@end
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic) id<RefreshPromotionsDelegate> delegate;
 
 @end
