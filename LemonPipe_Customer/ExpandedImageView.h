@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-@class Product;
+#import "Product.h"
 
-@interface ExpandedImageView : UIView
+@interface ExpandedImageView : UIView <CountDownTimerDelegate>
 @property (nonatomic, retain) Product *product;
 
 - (void)setDays:(NSInteger)days;

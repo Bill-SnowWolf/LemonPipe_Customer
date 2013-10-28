@@ -112,6 +112,7 @@ static ProductList *sharedInstance = nil;
                                                             name:[product objectForKey:@"name"]];
             newProduct.productID = [[product objectForKey:@"id"] intValue];
             [list addObject:newProduct];
+            [newProduct startTimer];
         }
         [delegate refreshData];
     } else if (connection == pullConnection) {
@@ -127,6 +128,7 @@ static ProductList *sharedInstance = nil;
                                                         name:[product objectForKey:@"name"]];
         newProduct.productID = [[product objectForKey:@"id"] intValue];
         [list addObject:newProduct];
+        [newProduct startTimer];
         [delegate refreshData];
     }
 }
