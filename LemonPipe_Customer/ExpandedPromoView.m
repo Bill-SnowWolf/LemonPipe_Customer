@@ -26,13 +26,13 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect
+ {
+ // Drawing code
+ }
+ */
 
 - (void)initialize
 {
@@ -75,7 +75,7 @@
     [expandedDiscountLabel setTransform:transform];
     
     [self addSubview:expandedDiscountLabel];
-
+    
     filePath = [[NSBundle mainBundle] pathForResource:@"PercentOff" ofType:@"png"];
     UIImage *percentOffImage = [UIImage imageWithContentsOfFile:filePath];
     
@@ -83,10 +83,16 @@
     [expandedPercentOffView setImage:percentOffImage];
     [self addSubview:expandedPercentOffView];
     
+    int fontSize;
     
-    UILabel *msrpLabel = [[UILabel alloc] initWithFrame:CGRectMake(223, 60, 75, 21)];
+    if (product.MSRP<1000)
+        fontSize = 20;
+    else
+        fontSize = 18;
+    
+    UILabel *msrpLabel = [[UILabel alloc] initWithFrame:CGRectMake(216, 60, 88, 21)];
     [msrpLabel setText:[NSString stringWithFormat:@"$%.2f", product.MSRP]];
-    [msrpLabel setFont:[UIFont fontWithName:@"Ubuntu-Medium" size:20]];
+    [msrpLabel setFont:[UIFont fontWithName:@"Ubuntu-Medium" size:fontSize]];
     [msrpLabel setTextColor:[UIColor whiteColor]];
     [msrpLabel setBackgroundColor:[UIColor clearColor]];
     [msrpLabel setTextAlignment:NSTextAlignmentCenter];
@@ -117,12 +123,18 @@
     
     [self addSubview:msrpLabel];
     
+    float discountPrice = product.MSRP*(1-product.discount/100.0);
     
-    UILabel *discountPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(216, 85, 90, 21)];
-    [discountPriceLabel setText:[NSString stringWithFormat:@"$%.2f", product.MSRP*(1-product.discount/100.0)]];
+    if (discountPrice < 1000)
+        fontSize = 24;
+    else
+        fontSize = 20;
+    
+    UILabel *discountPriceLabel = [[UILabel alloc] initWithFrame:CGRectMake(214, 85, 94, 21)];
+    [discountPriceLabel setText:[NSString stringWithFormat:@"$%.2f", discountPrice]];
     [discountPriceLabel setTextAlignment:NSTextAlignmentCenter];
     [discountPriceLabel setTextColor:[UIColor whiteColor]];
-    [discountPriceLabel setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:24]];
+    [discountPriceLabel setFont:[UIFont fontWithName:@"Ubuntu-Bold" size:fontSize]];
     [discountPriceLabel setBackgroundColor:[UIColor clearColor]];
     
     transform = CGAffineTransformRotate(discountPriceLabel.transform, -0.06);
