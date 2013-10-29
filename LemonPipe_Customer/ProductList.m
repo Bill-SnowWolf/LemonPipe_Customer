@@ -16,6 +16,7 @@
     NSMutableData *refreshResponseData;
     NSURLConnection *pullConnection;
     NSMutableData *pullResponseData;
+    NSMutableArray *tempList;
 }
 @synthesize list;
 @synthesize delegate;
@@ -41,7 +42,10 @@ static ProductList *sharedInstance = nil;
 #pragma mark - ProductList Operations
 - (void)pull:(NSUInteger)productID
 {
-    NSMutableURLRequest *pullRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://www1.lemonpipe.com/promotions"]];
+    NSString *urlString = [NSString stringWithFormat:
+                           @"http://www1.lemonpipe.com/promotions/%d.json", productID];
+    NSLog(@"%@",urlString);
+    NSMutableURLRequest *pullRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     [pullRequest setHTTPMethod:@"GET"];
     pullResponseData = [[NSMutableData alloc] init];
     
@@ -60,7 +64,7 @@ static ProductList *sharedInstance = nil;
 
 - (void)refreshList
 {
-    list = [[NSMutableArray alloc] initWithCapacity:20];
+    tempList = [[NSMutableArray alloc] initWithCapacity:20];
     // Get Product Lists from Server
     NSMutableURLRequest *refreshRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://www1.lemonpipe.com/promotions.json"]];
     [refreshRequest setHTTPMethod:@"GET"];
@@ -82,6 +86,8 @@ static ProductList *sharedInstance = nil;
 {
     if (connection == refreshConnection) {
         [refreshResponseData appendData:data];
+    } else if (connection == pullConnection) {
+        [pullResponseData appendData:data];
     }
     
 }
@@ -95,7 +101,7 @@ static ProductList *sharedInstance = nil;
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     if (connection == refreshConnection) {
-        list = [[NSMutableArray alloc] initWithCapacity:20];
+        tempList = [[NSMutableArray alloc] initWithCapacity:20];
         NSError *error;
         NSArray *newList = [NSJSONSerialization JSONObjectWithData:refreshResponseData options:kNilOptions error:&error];
         
@@ -111,15 +117,16 @@ static ProductList *sharedInstance = nil;
                                                   promotionHours:[[product objectForKey:@"promotion_hours"] intValue]
                                                             name:[product objectForKey:@"name"]];
             newProduct.productID = [[product objectForKey:@"id"] intValue];
-            [list insertObject:newProduct atIndex:0];
+            [tempList insertObject:newProduct atIndex:0];
             [newProduct startTimer];
         }
+        list = [[NSMutableArray alloc] initWithArray:tempList];
         [delegate refreshData];
     } else if (connection == pullConnection) {
         NSDictionary *product = [NSJSONSerialization JSONObjectWithData:pullResponseData options:kNilOptions error:NULL];
         NSString *imageStr = [NSString stringWithString:[product objectForKey:@"image"]];
+
         UIImage *image = [UIImage imageWithData:[imageStr base64DecodedData]];
-        
         Product *newProduct = [[Product alloc] initWithImage:image
                                                         MSRP:[[product objectForKey:@"msrp"] floatValue]
                                                     discount:[[product objectForKey:@"discount"] intValue]
@@ -129,7 +136,7 @@ static ProductList *sharedInstance = nil;
         newProduct.productID = [[product objectForKey:@"id"] intValue];
         [list insertObject:newProduct atIndex:0];
         [newProduct startTimer];
-        [delegate refreshData];
+        [delegate addNewPromotion];
     }
 }
 @end

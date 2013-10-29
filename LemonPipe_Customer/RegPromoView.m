@@ -15,7 +15,7 @@
 }
 - (id)initWithOrigin:(CGPoint)origin product:(Product *)newProduct
 {
-    self = [super initWithFrame:CGRectMake(origin.x, origin.y, 306, 101.5)];
+    self = [super initWithFrame:CGRectMake(origin.x, origin.y, 306, 101)];
     if (self) {
         product = newProduct;
         [self initialize];
@@ -37,7 +37,7 @@
     [self setBackgroundColor:[UIColor clearColor]];
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"RegPromoBG" ofType:@"png"];
-    UIImageView *regPromoBackground = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 306, 101.5)];
+    UIImageView *regPromoBackground = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 306, 101)];
     [regPromoBackground setImage:[UIImage imageWithContentsOfFile:filePath]];
     [self addSubview:regPromoBackground];
     

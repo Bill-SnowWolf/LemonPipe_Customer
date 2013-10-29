@@ -12,7 +12,7 @@
 @protocol RefreshPromotionsDelegate <NSObject>
 
 - (void)getNewProduc: (NSUInteger)productID;
-- (void)getAllPromotions;
+- (void)getAllPromotions:(id)sender;
 
 @end
 

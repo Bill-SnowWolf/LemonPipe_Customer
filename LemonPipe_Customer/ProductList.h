@@ -12,6 +12,7 @@
 @protocol RefreshDataDelegate <NSObject>
 
 - (void) refreshData;
+- (void) addNewPromotion;
 
 @end
 

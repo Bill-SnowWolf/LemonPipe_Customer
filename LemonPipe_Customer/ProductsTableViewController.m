@@ -76,6 +76,10 @@
     [self.view addSubview:indicatorView];
     [indicatorView startAnimating];
     
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(getAllPromotions:) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -188,7 +192,7 @@
     [productList pull:productID];
 }
 
-- (void)getAllPromotions
+- (void)getAllPromotions:(id)sender
 {
     productList = [ProductList sharedInstance];
     productList.delegate = self;
@@ -201,6 +205,17 @@
     NSLog(@"Reload");
     [self.tableView reloadData];
     [indicatorView stopAnimating];
+    [self.refreshControl endRefreshing];
 }
 
+- (void)addNewPromotion
+{
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    
+    [self.tableView beginUpdates];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView endUpdates];
+    [indicatorView stopAnimating];
+    [self.refreshControl endRefreshing];
+}
 @end
