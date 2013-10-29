@@ -111,7 +111,7 @@ static ProductList *sharedInstance = nil;
                                                   promotionHours:[[product objectForKey:@"promotion_hours"] intValue]
                                                             name:[product objectForKey:@"name"]];
             newProduct.productID = [[product objectForKey:@"id"] intValue];
-            [list addObject:newProduct];
+            [list insertObject:newProduct atIndex:0];
             [newProduct startTimer];
         }
         [delegate refreshData];
@@ -127,7 +127,7 @@ static ProductList *sharedInstance = nil;
                                               promotionHours:[[product objectForKey:@"promotion_hours"] intValue]
                                                         name:[product objectForKey:@"name"]];
         newProduct.productID = [[product objectForKey:@"id"] intValue];
-        [list addObject:newProduct];
+        [list insertObject:newProduct atIndex:0];
         [newProduct startTimer];
         [delegate refreshData];
     }

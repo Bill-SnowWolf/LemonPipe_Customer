@@ -14,6 +14,7 @@
 @interface ProductsTableViewController ()
 {
     ProductList *productList;
+    UIActivityIndicatorView *indicatorView;
 }
 @end
 
@@ -69,6 +70,12 @@
     [self.navigationItem setTitle:@"Products"];
     
     [self.tableView setBackgroundColor:[UIColor colorWithRed:0.129 green:0.282 blue:0.384 alpha:1.0]];
+    
+    indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    indicatorView.center = self.view.center;
+    [self.view addSubview:indicatorView];
+    [indicatorView startAnimating];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -193,6 +200,7 @@
 {
     NSLog(@"Reload");
     [self.tableView reloadData];
+    [indicatorView stopAnimating];
 }
 
 @end
